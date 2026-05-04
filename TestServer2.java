@@ -9,6 +9,9 @@ public class TestServer2{
             /*using same port as TestServer.java to show that it is already in use and will throw an exception. (other usable ports: 5000, 8080)*/
             /* ports between 0-1023 are reserved for OS tasks and 1024-65000 are for normal use*/
             System.out.println("Server2 has started on port 1234...");
+            Thread.sleep(10000); //waits for 10 seconds.
+            server.close(); // to close the server after the sleep time is over.
+            System.out.println("Server2 closed...");
         }
 
         catch(Exception e){
