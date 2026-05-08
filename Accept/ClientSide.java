@@ -1,4 +1,4 @@
-/************************************** Client side code for connecting to the server *********************************************************/
+/**************************************(Module-2) Client side code for connecting to the server *********************************************************/
 import java.net.*;
 public class ClientSide{
     public static void main(String args[]){
