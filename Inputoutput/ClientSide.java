@@ -17,8 +17,10 @@ public class ClientSide{
 
             /*BufferedReader- read text & PrintWriter- send text*/
             PrintWriter writer =
-                new PrintWriter(socket.getOutputStream(), true);
+                new PrintWriter(socket.getOutputStream(), true); 
+                /*socket.getOutputStream() --Gets sending path*/
             writer.println("Hello server"); //println- send one line of text to the server, it will automatically flush the stream after sending the line. (true in constructor is for auto flush)
+            writer.println("Vinland saga!");
         }
 
         catch(Exception e){

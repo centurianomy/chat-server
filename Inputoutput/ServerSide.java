@@ -21,8 +21,11 @@ public class ServerSide{
                 new BufferedReader( 
                     new InputStreamReader(socket.getInputStream()));
 
-            String msg = reader.readLine(); //read lines- receive one line of text from the client, it will block until it receives a line of text from the client.
-            System.out.println(msg);       
+            String msg; //read lines- receive one line of text from the client, it will block until it receives a line of text from the client.
+            while((msg=reader.readLine()) != null){
+                System.out.println(msg);
+            }  
+
         }
         catch(Exception e){
             e.printStackTrace();
