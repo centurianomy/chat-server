@@ -21,7 +21,9 @@ public class ClientSide{
                 /*socket.getOutputStream() --Gets sending path*/
             writer.println("Hello server"); //println- send one line of text to the server, it will automatically flush the stream after sending the line. (true in constructor is for auto flush)
             writer.println("Vinland saga!");
-        }
+            socket.close();//to close the connection after sending the messages to the server
+            //reference Note 2(ServerSide)
+        }   
 
         catch(Exception e){
             e.printStackTrace();

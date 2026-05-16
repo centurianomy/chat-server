@@ -10,7 +10,7 @@ public class ServerSide{
             System.out.println("Waiting for client to connect");
             Socket socket= server.accept();
 
-            /*Note: Raw streams work with bytes (No text directly) 
+            /*Note 1 : Raw streams work with bytes (No text directly) 
               so we use wrappers instead of input & outputstream
             */
             //InputStream in = socket.getInputstream();
@@ -32,3 +32,11 @@ public class ServerSide{
         }
     }
 }
+
+/* Note 2- in current scenario since we are using while loop to  read the data coming from client,
+    also we haven't used socket.close() in client side code.
+    And when the client side messages ends. it abruptly closes the connection but the server is still trying to read the messages from the client,
+    this resulted in connection reset exception */
+
+/* Note 3-printStackTrace()- is not preferred beacuse it exposes internal implemenmtations,
+    its better to use show user-friendly msgs useing- logger.error("...", e) ,etc */
